@@ -1,0 +1,24 @@
+{
+    "name": "guitanjo/FillamentCalendar",
+    "description": "Filament Full Calendar",
+    "type": "library",
+    "require": {
+        "php": "^8.0",
+        "filament/filament": "^2.0",
+        "illuminate/contracts": "^8.73|^9.0",
+        "spatie/laravel-package-tools": "^1.11"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "guitanjo\\FilamentCalendar\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Johannes Guitan",
+            "email": "johannes@guitan.de"
+        }
+    ],
+    "minimum-stability": "dev"
+}
