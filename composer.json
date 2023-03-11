@@ -1,7 +1,8 @@
 {
-    "name": "guitanjo/fillament-calendar",
+    "name": "guitanjo/filament-calendar",
     "description": "Filament Full Calendar",
     "type": "library",
+    "version":"0.1",
     "require": {
         "php": "^8.0",
         "filament/filament": "^2.0",
