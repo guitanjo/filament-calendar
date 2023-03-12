@@ -2,7 +2,7 @@
     "name": "guitanjo/filament-calendar",
     "description": "Filament Full Calendar",
     "type": "library",
-    "version":"0.1.0",
+    "version": "1.0.0",
     "require": {
         "php": "^8.0",
         "filament/filament": "^2.0",
@@ -21,5 +21,5 @@
             "email": "johannes@guitan.de"
         }
     ],
-    "minimum-stability": "dev"
+    "minimum-stability": "stable"
 }
