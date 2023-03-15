@@ -27,4 +27,9 @@ trait CanManageModals
     {
         return in_array('cancelledFullcalendarCreateEventModal', $this->getEventsBeingListenedFor());
     }
+
+     public function isListeningCancelledFilterModal(): bool
+     {
+         return in_array('cancelledFullcalendarFilterEventModal', $this->getEventsBeingListenedFor());
+     }
 }
