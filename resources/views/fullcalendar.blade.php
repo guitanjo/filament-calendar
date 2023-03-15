@@ -4,7 +4,7 @@
     <x-filament::card>
         <div wire:ignore x-ref="calendar" x-data="calendarComponent({
             key: @js($this->getKey()),
-            config: {{ json_encode($this->getConfig(), JSON_PRETTY_PRINT) }},
+            config: {{ config('filament-calendar.filter') ? $this->getConfigString() : json_encode($this->getConfig(), JSON_PRETTY_PRINT) }},
             locale: '{{ $locale }}',
             events: {{ json_encode($events) }},
             initialView: @js($this->config('initialView')),

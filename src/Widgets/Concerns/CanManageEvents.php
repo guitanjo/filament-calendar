@@ -4,6 +4,7 @@ namespace guitanjo\FilamentCalendar\Widgets\Concerns;
 
 use Closure;
 use Filament\Forms\ComponentContainer;
+use guitanjo\FilamentCalendar\Widgets\Forms\FilterEventForm;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Carbon;
 use guitanjo\FilamentCalendar\Widgets\Forms\CreateEventForm;
@@ -20,6 +21,7 @@ trait CanManageEvents
     use CanManageModals;
     use CreateEventForm;
     use EditEventForm;
+    use FilterEventForm;
     use EvaluateClosures;
 
     public $event_id = null;
@@ -34,13 +36,16 @@ trait CanManageEvents
         if (static::canEdit()) {
             $this->editEventForm->fill();
         }
+
+        $this->filterEventForm->fill();
     }
 
     protected function getForms(): array
     {
         return array_merge(
             $this->getCreateEventForm(),
-            $this->getEditEventForm()
+            $this->getEditEventForm(),
+            $this->getFilterEventForm()
         );
     }
 
@@ -101,5 +106,14 @@ trait CanManageEvents
 
             $calendar->createEventForm->fill(['start' => $start->isoFormat('Y-MM-DD'),'time'=>$time, 'end' => $end, 'number_serie'=>1]);
         };
+    }
+
+    public function openFilterModal()
+    {
+        //dd('test');
+
+        $this->dispatchBrowserEvent('open-modal', ['id' => 'fullcalendar--filter-event-modal']);
+
+        // return view('livewire.hello-modal');
     }
 }

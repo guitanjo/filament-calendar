@@ -1,6 +1,6 @@
 <?php
 
-namespace guitanjo\FilamentCalendar;
+namespace GuitanJo\FilamentCalendar;
 
 use Filament\PluginServiceProvider;
 use guitanjo\FilamentCalendar\Commands\UpgradeFilamentCalendarCommand;
@@ -24,7 +24,7 @@ class FilamentCalendarServiceProvider extends PluginServiceProvider
     {
         $package
             ->name(self::$name)
-            ->hasConfigFile()
+            ->hasConfigFile('filament-calendar')
             ->hasViews(self::$name)
             ->hasCommand(UpgradeFilamentCalendarCommand::class);
     }

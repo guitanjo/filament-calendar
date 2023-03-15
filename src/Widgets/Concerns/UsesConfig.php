@@ -11,11 +11,25 @@ trait UsesConfig
 
     public function getConfig(): array
     {
-        return array_merge(config('FilamentCalendar'), $this->fullCalendarConfig);
+        return array_merge(config('filament-calendar.config'), $this->fullCalendarConfig);
     }
 
     public function config($key, $default = null)
     {
         return $this->getConfig()[$key] ?? $default;
     }
+     public function getConfigString():string
+     {
+         return substr(json_encode($this->getConfig(), JSON_PRETTY_PRINT), 0, -1) . ", 
+                customButtons: 
+                    {filter: 
+                        {
+                            text: 'Filter',
+                            click: function() {
+                                    Livewire.emit('openFilterModal')
+                                },
+                        }
+                    }
+                } ";
+     }
 }
