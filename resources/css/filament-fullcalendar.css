@@ -32,3 +32,27 @@
 .dark .filament-fullcalendar--calendar.fc .fc-daygrid-day.fc-day-today {
     @apply bg-primary-900;
 }
+
+@media screen and (max-width:567px) { 
+ .fc-toolbar{
+        display: flex ;
+        flex-direction: column;
+        width: 100% ;
+    }
+ .fc-toolbar.fc-header-toolbar,.fc-daygrid-day-number, .fc-scrollgrid-sync-inner , .fc-more-link,  .fc-daygrid-event-harness{
+        font-size: 60% !important;
+    }
+}
+@media screen and (max-width:767px) { 
+    .fc-button {
+        font-size: 80% !important;
+        min-height: fit-content !important;
+        line-height: 0.75rem !important;
+    }
+    .fc-toolbar-chunk{
+        padding: 1px;
+    }
+   
+    .fc-header-toolbar,.fc-daygrid-day-number, .fc-scrollgrid-sync-inner , .fc-more-link,  .fc-daygrid-event-harness{
+        font-size: 80% !important;
+    }
